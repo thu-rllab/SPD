@@ -1,0 +1,23 @@
+#--- QMIX specific parameters ---
+
+# WRUL
+cache_size: 50000
+vis_process: False
+eval_process: True
+norm_reward: False
+ot_hyperparams:
+  ot_method: "proximal"
+  loss_type: "L2"
+  inner_iteration: 50
+  outer_iteration: 100
+  iter_bound: 0.001
+  sk_bound: 0.001
+disc_hidden_dim: 256
+disc_lr: 0.0003
+disc_batch: 200
+
+run: "url_run"
+runner: "url_eval"
+batch_size_run: 1
+
+name: "gwd_qmix_mpe"

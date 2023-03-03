@@ -1,0 +1,6 @@
+[submodule "third_party/football"]
+	path = third_party/football
+	url = git@github.com:Joy1112/football.git
+[submodule "third_party/smac"]
+	path = third_party/smac
+	url = git@github.com:oxwhirl/smac.git

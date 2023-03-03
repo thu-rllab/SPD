@@ -1,0 +1,87 @@
+#--- QMIX specific parameters ---
+
+# WRUL
+num_modes: 10
+cache_size: 10000
+max_control_len: 50
+start_steps: 5000
+batch_apwd: True
+vis_process: False
+eval_process: False
+norm_reward: False
+pseudo_reward_scale: 10.
+reward_scale: 0.
+ot_hyperparams:
+  ot_method: "proximal"
+  loss_type: "L2"
+  inner_iteration: 50
+  outer_iteration: 100
+  iter_bound: 0.001
+  sk_bound: 0.001
+url_algo: "gwd"
+sparse_return: False
+no_match: False
+url_velocity: False
+disc_hidden_dim: 256
+disc_lr: 0.0003
+disc_batch: 200
+judge_t: 100000
+reward_alpha: 0.8 #calc reward for chooing models
+
+# use epsilon greedy action selector
+action_selector: "delay_epsilon_greedy"
+epsilon_start: 0.2
+epsilon_finish: 0.05
+epsilon_anneal_time: 100000
+second_epsilon_start: 1.0
+second_epsilon_finish: 0.05
+second_epsilon_anneal_time: 100000
+
+run: "url_load_run"
+runner: "url_load"
+batch_size_run: 1
+buffer_size: 5000
+batch_size: 128
+optimizer: "adam"
+load_optim: False
+load_mixer: False
+best_mode: -1
+
+t_max: 4050000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+mac: "url_mac"
+agent: "n_rnn" 
+agent_output_type: q
+rnn_hidden_dim: 256
+
+learner: "nq_learner"
+mixer: "qmix"
+mixing_embed_dim: 32
+hypernet_embed: 64
+lr: 0.001 # Learning rate for agents
+td_lambda: 0.6
+optimizer: 'adam'
+q_lambda: False
+# gamma: 0.999
+
+# rnn layer normalization
+use_layer_norm: False
+
+# orthogonal init for DNN
+use_orthogonal: False
+gain: 0.01
+
+# Priority experience replay
+use_per: False
+per_alpha: 0.6
+per_beta: 0.4
+return_priority: True
+
+save_model: True
+save_model_interval: 200000
+
+name: "gwd_qmix_mpe_load"
