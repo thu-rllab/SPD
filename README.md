@@ -129,7 +129,7 @@ pip install dm-tree==0.1.7 && pip install ./third_party/smac
 pip install pettingzoo[mpe]==1.17.0
 
 # install dependencies for pymarl2
-pip install sacred numpy==1.22.4 scipy gym matplotlib seaborn pyyaml==5.3.1 pygame pytest probscale imageio snakeviz tensorboard-logger pyvirtualdisplay tqdm protobuf==3.20.1
+pip install sacred numpy==1.22.4 scipy gym==0.24.1 matplotlib seaborn pyyaml==5.3.1 pygame pytest probscale imageio snakeviz tensorboard-logger pyvirtualdisplay tqdm protobuf==3.20.1
 
 # install pytorch, please refer to the official site of PyTorch for a proper version.
 # here we also use torch==1.7.1+cu110 as an example.
@@ -227,6 +227,8 @@ Similarly, you should specify the locatin of the model to load to reproduce the 
 ```bash
 # here we give an example
 # the details about `env_args.map_style` please refer to file `src/envs/gfootball/academy_3_vs_1_with_keeper.py`
+# Besides, the program will test all the synergy patterns (here the number of them is 20) to select the best one at first
+# and then use the selected one as the network initialization with epsilon start with a given rate (here it is 0.2) to run the training process.
 python src/main.py --config=url_gfootball_load \
     --env-config=academy_3_vs_1_with_keeper \
     with num_modes=20 env_args.map_style=0 t_max=4050000 \

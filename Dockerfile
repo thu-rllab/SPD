@@ -39,7 +39,7 @@ RUN pip install setuptools wheel && \
     pip install dm-tree==0.1.7 && pip install /root/envs/smac && \
     pip install pettingzoo[mpe]==1.17.0 && \
     rm -r /root/envs && \
-    pip install sacred numpy==1.22.4 scipy gym matplotlib seaborn pyyaml==5.3.1 pygame pytest probscale imageio snakeviz tensorboard-logger pyvirtualdisplay tqdm protobuf==3.20.1 && \
+    pip install sacred numpy==1.22.4 scipy gym==0.24.1 matplotlib seaborn pyyaml==5.3.1 pygame pytest probscale imageio snakeviz tensorboard-logger pyvirtualdisplay tqdm protobuf==3.20.1 && \
     pip install torch==$PYTORCH -f https://download.pytorch.org/whl/torch_stable.html
 
 RUN	rm -rf /tmp/* /var/cache/* /usr/share/doc/* /usr/share/man/* /var/lib/apt/lists/*

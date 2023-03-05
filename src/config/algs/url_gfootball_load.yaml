@@ -78,4 +78,4 @@ return_priority: True
 
 save_model: True
 
-name: "wurl_qmix_football_load"
+name: "url_qmix_football_load"
